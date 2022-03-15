@@ -21,8 +21,17 @@ inputs:
   SiteName:
     description: WebApp name
     required: true
-  AzureCredentials:
-    description: Azure credentials
+  # AzureCredentials:
+  #   description: Azure credentials
+  #   required: true
+  client-id: 
+    description: client id
+    required: true
+  tenant-id: 
+    description: tenant id
+    required: true
+  subscription-id: 
+    desscription: subscription id
     required: true
 
 outputs:
@@ -41,7 +50,10 @@ runs:
 
   - uses: azure/login@v1
     with:
-      creds: ${{ inputs.AzureCredentials }}
+      # creds: ${{ inputs.AzureCredentials }}
+      client-id: ${{ inputs.client-id }}
+      tenant-id: ${{ inputs.tenant-id }}
+      subscription-id: ${{ inputs.subscription-id }}
 
   - name: Create Resource Group ${{ inputs.ResourceGroupName }} if not exists 
     uses: Azure/cli@v1.0.0
@@ -56,7 +68,8 @@ runs:
     id: deployARM
     with:
       scope: resourcegroup
-      subscriptionId: ${{ fromJSON(inputs.AzureCredentials).subscriptionId }}
+      # subscriptionId: ${{ fromJSON(inputs.AzureCredentials).subscriptionId }}
+      subscriptionId: ${{ inputs.subscription-id }}
       resourceGroupName: ${{ inputs.ResourceGroupName }}
       template: ${{ inputs.artifactsName }}/IaC/azuredeploy.json
       deploymentMode: Incremental

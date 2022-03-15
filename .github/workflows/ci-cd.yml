@@ -244,7 +244,11 @@ jobs:
         ResourceGroupName: ${{ env.ResourceGroupName }}
         artifactsName: ${{ env.artifactsName }}
         SiteName: ${{ env.SiteName }}
-        AzureCredentials: ${{ secrets.AZURE_CREDENTIALS }}
+        # AzureCredentials: ${{ secrets.AZURE_CREDENTIALS }}
+        # oidc
+        client-id: 176f2da1-e706-47e6-8514-4424aa8b6638
+        tenant-id: e9846558-c4f0-4312-a89e-ebebe80779a1
+        subscription-id: 8e395825-3116-4d91-b6e9-e73fe2573301
 
   qa:
     if: github.ref == 'refs/heads/demos/main' 
