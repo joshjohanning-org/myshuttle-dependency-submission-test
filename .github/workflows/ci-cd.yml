@@ -240,7 +240,7 @@ jobs:
       with:
         dbServerName: ${{ env.dbServerName }}
         dbUser: ${{ env.dbUser }}
-        dbPassword: ${{ secrets.dbPassword_dev }}
+        dbPassword: ${{ secrets.dbPassword }}
         ResourceGroupName: ${{ env.ResourceGroupName }}
         artifactsName: ${{ env.artifactsName }}
         SiteName: ${{ env.SiteName }}
@@ -268,7 +268,7 @@ jobs:
       with:
         dbServerName: ${{ env.dbServerName }}
         dbUser: ${{ env.dbUser }}
-        dbPassword: ${{ secrets.dbPassword_dev }}
+        dbPassword: ${{ secrets.dbPassword }}
         ResourceGroupName: ${{ env.ResourceGroupName }}
         artifactsName: ${{ env.artifactsName }}
         SiteName: ${{ env.SiteName }}
