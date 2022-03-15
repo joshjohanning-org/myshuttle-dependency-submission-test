@@ -6,6 +6,7 @@ on:
     branches: [ demos/main ]
   pull_request:
     branches: [ demos/main ]
+  workflow_dispatch:
 
 # Use github.event.repository.id to have a unique value per repo to avoid conflicts of multiple
 # repositories deploying this sample. It's kind of hackish, but works for sample purposes and 
