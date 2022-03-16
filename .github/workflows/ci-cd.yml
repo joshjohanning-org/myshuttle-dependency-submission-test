@@ -17,6 +17,11 @@ permissions:
   checks: write
   security-events: write
   issues: write
+  deployments: write
+  pages: write
+  repository-projects: write
+  discussions: write
+  statuses: write
 
 # Use github.event.repository.id to have a unique value per repo to avoid conflicts of multiple
 # repositories deploying this sample. It's kind of hackish, but works for sample purposes and 
